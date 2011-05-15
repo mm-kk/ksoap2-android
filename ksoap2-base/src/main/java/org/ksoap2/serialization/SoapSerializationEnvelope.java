@@ -95,6 +95,19 @@ public class SoapSerializationEnvelope extends SoapEnvelope
 	}
 
 	/**
+	 * @see org.ksoap2.serialization.BodyParser
+	 * 
+	 *      This constructor is used for providing the reference to object that
+	 *      implements {@link org.ksoap2.serialization.BodyParser BodyParser}
+	 *      interface. If not null, referenced object is used for parsing
+	 *      message's body.
+	 */
+	public SoapSerializationEnvelope(int version, BodyParser bodyParser) {
+		this(version);
+		this.bodyParser = bodyParser;
+	}
+
+	/**
 	 * @return the addAdornments
 	 */
 	public boolean isAddAdornments()
